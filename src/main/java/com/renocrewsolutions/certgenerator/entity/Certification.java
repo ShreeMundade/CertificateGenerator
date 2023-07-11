@@ -12,17 +12,9 @@ public class Certification {
 	private int certiId;
 	private String certiName;
 	private String certiDescription;
-<<<<<<< HEAD
 	private double certiCost;
-	
-	
-=======
-	private String certiCost;
 
-<<<<<<< HEAD
->>>>>>> 878d475dae405d14e749d47a0508a5efb67f88cd
-=======
->>>>>>> 878d475dae405d14e749d47a0508a5efb67f88cd
+
 	public Certification() {
 		super();
 		// TODO Auto-generated constructor stub
