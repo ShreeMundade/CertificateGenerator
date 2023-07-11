@@ -12,8 +12,12 @@ public class Certification {
 	private int certiId;
 	private String certiName;
 	private String certiDescription;
+//<<<<<<< HEAD
 	private double certiCost;
 
+//=======
+	
+//>>>>>>> 878d475dae405d14e749d47a0508a5efb67f88cd
 
 	public Certification() {
 		super();
