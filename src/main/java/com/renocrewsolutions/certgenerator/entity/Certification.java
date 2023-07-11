@@ -1,22 +1,35 @@
 package com.renocrewsolutions.certgenerator.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name="certification")
 public class Certification {
 	
-	
+	@Id
 	private int certiId;
 	private String certiName;
 	private String certiDescription;
+<<<<<<< HEAD
+	private double certiCost;
+	
+	
+=======
 	private String certiCost;
-	
-	
+
+<<<<<<< HEAD
+>>>>>>> 878d475dae405d14e749d47a0508a5efb67f88cd
+=======
+>>>>>>> 878d475dae405d14e749d47a0508a5efb67f88cd
 	public Certification() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Certification(int certiId, String certiName, String certiDescription, String certiCost) {
+	public Certification(int certiId, String certiName, String certiDescription, double certiCost) {
 		super();
 		this.certiId = certiId;
 		this.certiName = certiName;
@@ -55,12 +68,12 @@ public class Certification {
 	}
 
 
-	public String getCertiCost() {
+	public double getCertiCost() {
 		return certiCost;
 	}
 
 
-	public void setCertiCost(String certiCost) {
+	public void setCertiCost(double certiCost) {
 		this.certiCost = certiCost;
 	}
 

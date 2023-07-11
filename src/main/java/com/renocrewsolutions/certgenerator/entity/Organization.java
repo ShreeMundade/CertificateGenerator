@@ -1,9 +1,12 @@
 package com.renocrewsolutions.certgenerator.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
-
+@Entity
+@Table(name="organization")
 public class Organization {
-
+	
 	private int orgId;
 	private String orgName;
 	private String orgAddress;
