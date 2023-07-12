@@ -1,6 +1,8 @@
 package com.renocrewsolutions.certgenerator.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -9,6 +11,7 @@ import jakarta.persistence.Table;
 public class Certification {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int certiId;
 	private String certiName;
 	private String certiDescription;

@@ -1,12 +1,16 @@
 package com.renocrewsolutions.certgenerator.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="organization")
 public class Organization {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int orgId;
 	private String orgName;
 	private String orgAddress;
