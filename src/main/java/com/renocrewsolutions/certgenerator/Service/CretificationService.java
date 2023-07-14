@@ -14,7 +14,7 @@ import com.renocrewsolutions.certgenerator.repository.UserRepository;
 public class CretificationService {
 	
 	  private  CertificationRepository certificationRepository;
-	private Long resultId;
+	private Long certificationId;
 	    @Autowired
 	    public CretificationService(CertificationRepository certificationRepositoy) {
 	        this.certificationRepository = certificationRepository;
@@ -24,9 +24,9 @@ public class CretificationService {
 	        return certificationRepository.findAll();
 	    }
 
-	    public Optional<Certification> getCertifcationById(Long resultId) {
+	    public Optional<Certification> getCertifcationById(Long certificationId) {
 		
-			return certificationRepository.findById(resultId);
+			return certificationRepository.findById(certificationId);
 	    }
 
 	    public Certification createCertification( Certification certification){
@@ -38,8 +38,8 @@ public class CretificationService {
 	        return certificationRepository.save(certification);
 	    }
 
-	    public void deleteCertification(Long resultId) {
-	        certificationRepository.deleteById(resultId);
+	    public void deleteCertification(Long certificationId) {
+	        certificationRepository.deleteById(certificationId);
 	    }
 
 
