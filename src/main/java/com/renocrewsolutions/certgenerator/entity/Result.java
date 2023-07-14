@@ -17,10 +17,10 @@ public class Result {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int resultId;
 	// this from user class ->id
-	@ManyToMany
+	
 	private User id;
 	// this from Exam class -> examId
-	@ManyToMany
+	
 	private Exam examId;
 	
 	private int resultScore;
