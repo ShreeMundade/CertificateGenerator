@@ -15,12 +15,6 @@ public class CertificationController {
 	{
 	
 	 // only checking
-	//	Certification certification =new Certification();
-	//	certification.setCertiName("xyz");
-	//	certification.setCertiDescription("This is intership certicate");
-	//	certification.setCertiCost(1000);
 	
-		return "testing";
-
 	}
 }
