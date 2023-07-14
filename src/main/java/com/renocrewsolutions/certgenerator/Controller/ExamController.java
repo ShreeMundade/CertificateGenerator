@@ -14,14 +14,7 @@ public class ExamController {
 	{
 	
 	 // only checking
-	//  	Exam exam=new Exam();
-	//	exam.setExamName("xyz");
-	//	exam.setExamDescrption("	testing");
-	//	exam.setExamDuration("120 min");
-	//	exam.getExam_attempt_Date();
 	
-		return "testing";
-
 }
 
 }
