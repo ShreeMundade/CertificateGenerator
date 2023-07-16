@@ -34,38 +34,37 @@ import com.renocrewsolutions.certgenerator.entity.User;
 	    }
 
 	    @GetMapping
-	    public ResponseEntity<List<Organization>> getAllUsers() {
-	        List<Organization> organizations = organizationService.getAllUsers();
+	    public ResponseEntity<List<Organization>> getAllOrganization() {
+	        List<Organization> organizations = organizationService.getAllOrganization();
 	        return new ResponseEntity<>(organizations, HttpStatus.OK);
 	    }
 
 	    @GetMapping("/{id}")
-	    public ResponseEntity<User> getUserById(@PathVariable Long id) {
-	        return userService.getUserById(id)
-	                .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
+	    public ResponseEntity<Organization> getOrganizationById(@PathVariable Long orgId) {
+	        return organizationService.getOrganizationById(orgId)
+	                .map(organization -> new ResponseEntity<>(organization, HttpStatus.OK))
 	                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
 	    }
 
 	    @PostMapping
-	    public ResponseEntity<User> createUser(@RequestBody User user) {
-	        User createdUser = userService.createUser(user);
-	        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
+	    public ResponseEntity<Organization> createOrganization(@RequestBody Organization organization) {
+	        Organization createdOrganization = organizationService.createdOrganization(organization);
+	        return new ResponseEntity<>(createdOrganization, HttpStatus.CREATED);
 	    }
 
 	    @PutMapping("/{id}")
-	    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
-	        user.setId(id);
-	        User updatedUser = userService.updateUser(user);
-	        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+	    public ResponseEntity<Organization> updateOrganization(@PathVariable Long orgId, @RequestBody Organization organization) {
+	        organization.setorgId(orgId);
+	        Organization updatedOrganization = organizationService.updateOrganization(organization);
+	        return new ResponseEntity<>(updatedOrganization, HttpStatus.OK);
 	    }
 
 	    @DeleteMapping("/{id}")
-	    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-	        userService.deleteUser(id);
+	    public ResponseEntity<Void> deleteOrganization(@PathVariable Long orgId) {
+	    	OrganizationService.deleteOrganization(orgId);
 	        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	    }
-	}
+	
 
 	
 	}
-}

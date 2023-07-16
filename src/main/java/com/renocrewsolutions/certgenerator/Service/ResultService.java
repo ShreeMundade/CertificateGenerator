@@ -37,7 +37,8 @@ public class ResultService {
 		        return resultRepository.save( result);
 		    }
 
-		    public void deleteResult(Long resultId) {
+		    public boolean deleteResult(Long resultId) {
 		    	resultRepository.deleteById(resultId);
+				return false;
 		    }
 }

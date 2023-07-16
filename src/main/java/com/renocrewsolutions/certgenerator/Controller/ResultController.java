@@ -10,6 +10,7 @@ import com.renocrewsolutions.certgenerator.entity.Result;
 import jakarta.persistence.criteria.CriteriaBuilder.In;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/results")
@@ -17,6 +18,7 @@ public class ResultController {
 
     private final ResultService resultService;
 	private ResultService ResultService;
+	private Long resultId;
 
     @Autowired
     public ResultController(ResultService resultService) {
@@ -25,20 +27,18 @@ public class ResultController {
 
     @GetMapping
     public ResponseEntity<List<Result>> getAllResults() {
-        List<Result> results = resultService.getAllResults();
+        List<Result> results = resultService.getAllResult();
         return new ResponseEntity<>(results, HttpStatus.OK);
     }
 
-    @GetMapping("/{resultId}")
-    public ResponseEntity<Result> getResultById(@PathVariable Int resultId) {
+    @GetMapping("/{id}")
+    public ResponseEntity<Result> getResultById(@PathVariable Long resultId) {
 		
-    	this.Id = Id;
-	
-		Result result = resultService.getResultById(resultId);
+		Optional<Result> result = resultService.getResultById(resultId);
         if (result != null) {
-            return new ResponseEntity<>(result, HttpStatus.OK);
+            return new ResponseEntity<Result>(HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Result>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -50,8 +50,8 @@ public class ResultController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Result> updateResult(
-            @PathVariable("id") Long id, @RequestBody Result result) {
-        Result updatedResult = resultService.updateResult(id, result);
+            @PathVariable("resultId") Long resultId, @RequestBody Result result) {
+        Result updatedResult = resultService.updateResult(result);
         if (updatedResult != null) {
             return new ResponseEntity<>(updatedResult, HttpStatus.OK);
         } else {
@@ -60,8 +60,8 @@ public class ResultController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteResult(@PathVariable("id") Long id) {
-        boolean deleted = resultService.deleteResult(id);
+    public ResponseEntity<Void> deleteResult(@PathVariable("resultId") Long resultid) {
+        boolean deleted = resultService.deleteResult(resultId);
         if (deleted) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {

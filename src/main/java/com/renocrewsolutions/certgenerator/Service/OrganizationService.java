@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.renocrewsolutions.certgenerator.entity.Certification;
 import com.renocrewsolutions.certgenerator.entity.Organization;
+import com.renocrewsolutions.certgenerator.entity.User;
 import com.renocrewsolutions.certgenerator.repository.CertificationRepository;
 import com.renocrewsolutions.certgenerator.repository.OrganizationRepository;
 
@@ -40,6 +41,16 @@ public class OrganizationService {
 	    public void deleteCertification(Long orgId) {
 	    	organizationRepository.deleteById(orgId);
 	    }
+
+		public Organization createdOrganization(Organization organization) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public static void deleteOrganization(Long orgId2) {
+			// TODO Auto-generated method stub
+			
+		}
 
 
 }

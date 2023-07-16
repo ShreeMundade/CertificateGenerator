@@ -37,8 +37,9 @@ public class ExamService {
 	        return examRepository.save(exam);
 	    }
 
-	    public void deleteExam(Long examId) {
-	    	examRepository.deleteById(examId);
+	    public boolean deleteExam(Long examId) {
+	    	 examRepository.deleteById(examId);
+			return false;
 	    }
 
 

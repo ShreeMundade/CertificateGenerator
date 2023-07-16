@@ -66,6 +66,11 @@ public class Organization {
 		return "Organization [orgId=" + orgId + ", orgName=" + orgName + ", orgAddress=" + orgAddress + ", orgContact="
 				+ orgContact + "]";
 	}
-	
-	
+
+	public void setorgId(Long orgId2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }
